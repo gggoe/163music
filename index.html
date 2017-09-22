@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>163music</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script src="/dist/build.js"></script>
-  </body>
+    <title>网易云音乐</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--当网站添加到主屏幕快速启动方式，将网站添加到主屏幕快速启动方式-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!--隐藏ios上的浏览器地址栏-->
+    <meta name="apple-touch-fullscreen" content="yes">
+    <!-- UC默认竖屏 ，UC强制全屏 -->
+    <meta name=full-screen content=yes>
+    <meta name=browsermode content=application>
+    <meta name=x5-orientation content=portrait>
+    <meta name=x5-fullscreen content=true>
+    <meta name=x5-page-mode content=app>
+    <meta name="format-detection" content="telephone=no, email=no">
+    <!--清除缓存-->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <script>
+        (function (doc, win, undefined) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (clientWidth >= 750) {
+                        clientWidth = 750;
+                    }
+                    if (clientWidth === undefined) return;
+                    docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
+                };
+            if (doc.addEventListener === undefined) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false)
+        })(document, window);
+    </script>
+</head>
+<body>
+<div id="app"></div>
+<script src="/dist/build.js"></script>
+</body>
 </html>
