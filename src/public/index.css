@@ -16,6 +16,6 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-#header .router-link-active{
-    opacity: 1;
+a {
+    color: #333;
 }

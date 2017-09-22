@@ -25,10 +25,12 @@
         display: flex;
         justify-content: space-between;
     }
-    #header div,#header div *{
-        display:inline-block;
-        height:100%;
+
+    #header div, #header div * {
+        display: inline-block;
+        height: 100%;
     }
+
     .iconfont {
         padding: 0 .1rem;
         font-size: .26rem;
@@ -37,6 +39,10 @@
     }
 
     .iconfont.action {
+        opacity: 1;
+    }
+
+    #header .router-link-active {
         opacity: 1;
     }
 </style>

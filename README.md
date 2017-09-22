@@ -84,9 +84,13 @@ module: {
 }
 ```
 
-
-
-### 下载vue-swiper
+### 下载 vue-swiper
 ```
 npm install vue-awesome-swiper -S
+```
+### 下载 rippleria
+
+点击波浪动画插件
+```
+npm install rippleria -S
 ```

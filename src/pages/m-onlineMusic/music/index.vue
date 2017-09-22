@@ -1,7 +1,7 @@
 <template>
     <div id="music">
         <!-- 轮播图 -->
-        <div>轮播图</div>
+        <Swiper></Swiper>
         <!-- 推荐 -->
         <div>推荐</div>
         <!-- 推荐歌单 -->
@@ -9,7 +9,13 @@
     </div>
 </template>
 <script>
+    import Swiper from '../../../components/m-swiper/index.vue'
 
+    export default {
+        components:{
+            Swiper
+        }
+    }
 </script>
 <style scoped>
 

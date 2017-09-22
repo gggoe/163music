@@ -20,7 +20,15 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
     <meta http-equiv="Pragma" content="no-cache"/>
     <meta http-equiv="Expires" content="0"/>
+    <!--网站图标-->
+    <link rel="shortcut icon" href="//s1.music.126.net/music.ico?v1">
+    <!--点击波浪效果插件-->
+    <link rel="stylesheet" href="/node_modules/rippleria/css/jquery.rippleria.min.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="/node_modules/rippleria/js/jquery.rippleria.min.js"></script>
+
     <script>
+        // rem 适配
         (function (doc, win, undefined) {
             var docEl = doc.documentElement,
                 resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
@@ -36,6 +44,47 @@
             win.addEventListener(resizeEvt, recalc, false);
             doc.addEventListener('DOMContentLoaded', recalc, false)
         })(document, window);
+
+        // 匀速运动动画
+        (function (win) {
+            function move(options) {
+                var curEle = options.curEle;
+                var style = options.style;
+                var _time = options.time;
+
+                var begin = {};
+                var end = {};
+                var speed = {};
+
+//                console.log(style);
+                for (var key in style) {
+                    if (style.hasOwnProperty(key)) {
+                        begin[key] = parseFloat(window.getComputedStyle(curEle, null)[key]);
+                        end[key] = style[key];
+//                        console.log(end[key],begin[key]);
+                        speed[key] = (end[key] - begin[key]) / _time;
+                    }
+                }
+
+                clearInterval(curEle.timer);
+                var time = 0;
+                curEle.timer = setInterval(function () {
+                    time += 15;
+                    for (var key in style) {
+                        if (style.hasOwnProperty(key)) {
+                            if (time >= _time) {
+                                curEle.style[key] = style[key] + 'px';
+                                clearInterval(curEle.timer);
+                                return;
+                            }
+                            curEle.style[key] = (speed[key] * time + begin[key]) + 'px';
+                        }
+                    }
+                }, 15);
+            }
+
+            win.$move = move;
+        })(window);
     </script>
 </head>
 <body>
