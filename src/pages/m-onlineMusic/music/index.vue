@@ -1,18 +1,29 @@
 <template>
     <div id="music">
         <!-- 轮播图 -->
-        <Swiper></Swiper>
-        <!-- 推荐 -->
-        <div>推荐</div>
+        <Swiper :bannersData="bannersData"></Swiper>
+        <!-- nav -->
+        <div class="nav">
+
+        </div>
         <!-- 推荐歌单 -->
-        <div id="aaa">推荐歌单</div>
+        <div>推荐歌单</div>
+        <div>推荐歌单</div>
+        <div>推荐歌单</div>
+
     </div>
 </template>
 <script>
     import Swiper from '../../../components/m-swiper/index.vue'
+    import dummyData from '../../../diy/dummyData'
 
     export default {
-        components:{
+        data() {
+            return {
+                bannersData: dummyData.bannersData
+            }
+        },
+        components: {
             Swiper
         }
     }

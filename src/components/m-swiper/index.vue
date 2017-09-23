@@ -1,15 +1,9 @@
 <template>
     <swiper :options="swiperOption" ref="mySwiper">
-        <!-- slides -->
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
-        <swiper-slide>Slide 5</swiper-slide>
-        <swiper-slide>Slide 6</swiper-slide>
-        <swiper-slide>Slide 7</swiper-slide>
-        <swiper-slide>Slide 8</swiper-slide>
-        <!-- Optional controls -->
+        <swiper-slide v-for="banner in bannersData">
+            <img :src="banner.img" alt="">
+        </swiper-slide>
+
         <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 </template>
@@ -17,10 +11,9 @@
     import {swiper, swiperSlide} from 'vue-awesome-swiper'
 
     export default {
-        components: {
-            swiper,
-            swiperSlide
-        },
+        props: [
+            'bannersData'
+        ],
         data() {
             return {
                 swiperOption: {
@@ -30,6 +23,10 @@
                     pagination: '.swiper-pagination', // 分页器
                 }
             }
+        },
+        components: {
+            swiper,
+            swiperSlide
         }
     }
 </script>
@@ -37,4 +34,15 @@
     .swiper-pagination-bullet-active {
         background-color: red;
     }
+
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+        bottom: -0.1rem;
+    }
+
+    .swiper-container, .swiper-container img {
+        height: 1.5rem;
+        width: 100%;
+    }
+
+
 </style>

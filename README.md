@@ -94,3 +94,11 @@ npm install vue-awesome-swiper -S
 ```
 npm install rippleria -S
 ```
+
+### 下载 vue-resource
+
+vue请求数据
+
+```
+npm i vue-resource -S
+```

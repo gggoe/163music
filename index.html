@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="/node_modules/rippleria/css/jquery.rippleria.min.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="/node_modules/rippleria/js/jquery.rippleria.min.js"></script>
-
     <script>
         // rem 适配
         (function (doc, win, undefined) {
@@ -34,9 +33,9 @@
                 resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize',
                 recalc = function () {
                     var clientWidth = docEl.clientWidth;
-                    if (clientWidth >= 750) {
-                        clientWidth = 750;
-                    }
+//                    if (clientWidth >= 750) {
+//                        clientWidth = 750;
+//                    }
                     if (clientWidth === undefined) return;
                     docEl.style.fontSize = 100 * (clientWidth / 375) + 'px';
                 };

@@ -18,12 +18,13 @@
 <style scoped>
     #header {
         height: .64rem;
-        background-color: #d43c33;
+        background-color: red;
         font-size: .26rem;
         line-height: .64rem;
         text-align: center;
         display: flex;
         justify-content: space-between;
+        width: 100%;
     }
 
     #header div, #header div * {

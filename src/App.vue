@@ -1,7 +1,7 @@
 <template>
     <div id="app">
-        <mHeader></mHeader>
-        <router-view></router-view>
+        <mHeader class="header"></mHeader>
+        <router-view class="view"></router-view>
     </div>
 </template>
 
@@ -10,12 +10,20 @@
 
     export default {
         name: 'app',
-        components:{
+        components: {
             mHeader
         }
     }
 </script>
 
-<style lang="scss">
-
+<style scoped>
+    .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 99;
+    }
+    .view{
+        margin-top:.64rem;
+    }
 </style>
